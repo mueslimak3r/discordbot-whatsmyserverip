@@ -5,9 +5,11 @@ import discord
 from discord.ext import tasks
 from dotenv import Dotenv
 
+import pathlib
 from requests import get
 
-env_dict = Dotenv(".env")
+script_location = pathlib.Path(__file__).parent.absolute()
+env_dict = Dotenv(str(script_location) + '/.env')
 
 TOKEN = env_dict['DISCORD_TOKEN']
 GUILD = env_dict['DISCORD_GUILD']
