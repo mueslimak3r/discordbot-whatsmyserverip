@@ -3,13 +3,14 @@ import os
 
 import discord
 from discord.ext import tasks
-from dotenv import load_dotenv
+from dotenv import Dotenv
 
 from requests import get
 
-load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN')
-GUILD = os.getenv('DISCORD_GUILD')
+env_dict = Dotenv(".env")
+
+TOKEN = env_dict['DISCORD_TOKEN']
+GUILD = env_dict['DISCORD_GUILD']
 
 client = discord.Client()
 
